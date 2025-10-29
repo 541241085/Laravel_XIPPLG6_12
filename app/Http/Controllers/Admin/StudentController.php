@@ -49,9 +49,11 @@ class StudentController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-    {
-        //
-    }
+{
+    $student = Student::findOrFail($id);
+    return view('admin.student.show', compact('student'));
+}
+
 
     /**
      * Show the form for editing the specified resource.
